@@ -177,8 +177,12 @@ contract DealClient {
                     emit BatchIdLeafNodes(batchId, node, leftLeaf, rightLeaf);
                 } else {
                     // If there's an odd number of nodes, duplicate the last one
+                    bytes memory zeroComms;
+                    bytes32 zeroCommNode = bytes32(
+                        zeroComms.slice(32 * i, 32 * (i + 1))
+                    );
                     bytes32 leftLeaf = nodes[i];
-                    bytes32 rightLeaf = nodes[i];
+                    bytes32 rightLeaf = zeroCommNode;
                     bytes32 node = computeNode(leftLeaf, rightLeaf);
                     newNodes[i / 2] = node;
                     emit BatchIdLeafNodes(batchId, node, leftLeaf, rightLeaf);
