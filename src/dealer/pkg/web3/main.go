@@ -11,7 +11,7 @@ import (
 	"net/http"
 	"os"
 	"storage/pkg/config"
-	"storage/pkg/constants"
+	"strconv"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
@@ -128,7 +128,13 @@ func GetTotalDeals() (*[]DealRequest, uint64, uint64, uint64, error) {
 		}
 		totalSize = totalSize + uint64(fileInfo.Size())
 
-		if totalSize >= uint64(constants.Max_Batch_Size) {
+		max_batch_size, err := strconv.Atoi(config.MAX_BATCH_SIZE)
+		if err != nil {
+			fmt.Println("MAX batch size not found:", err)
+			continue
+		}
+
+		if totalSize >= uint64(max_batch_size) {
 			dealEndIndex = uint64(i)
 			break
 		}

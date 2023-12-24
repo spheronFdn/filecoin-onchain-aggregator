@@ -10,8 +10,6 @@ var TopMiners map[string][]string = map[string][]string{
 	"Devnet":  {"f01000"},
 }
 
-var Max_Batch_Size uint = 2000 // bytes
-
 var Polling_Rate time.Duration = time.Second * 10 // seconds
 
 var Min_Deal_Duration = 518400
