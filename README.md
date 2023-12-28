@@ -18,10 +18,26 @@ Therefore, we believe it’s crucial to have a decentralized deal aggregator for
 ## Table of Contents
 
 - [Installation](#installation)
-- [Usage](#usage)
 - [Configuration](#configuration)
 - [Contributing](#contributing)
 - [License](#license)
+
+## Dependencies
+
+- **FIL_NODE**: Filcoin Node to import files and make deals with the SPs
+- **PRIV_KEY**: Private key to make transactions on the aggregator contract onchain
+- **CHAIN_RPC**: Chain RPC node for connecting to the chain
+- **DEAL_CLIENT_CONTRACT**: Deal Client Contract with the Aggregator logic
+
+## Configuration
+
+```
+.env
+
+Create an .env file and put all the variables from this file there
+
+src/dealer/pkg/config/config.go
+```
 
 ## Installation and Usage
 
@@ -32,3 +48,7 @@ Provide step-by-step instructions on how to install and set up your project. Inc
 $ go install
 $ go run cmd/dealer/main.go
 ```
+
+## Smart Contracts
+
+Checkout the Smart Contracts guide [here](https://github.com/spheronFdn/filecoin-onchain-aggregator/blob/main/src/contracts/README.md)
