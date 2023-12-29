@@ -39,6 +39,40 @@ Create an .env file and put all the variables from this file there
 src/dealer/pkg/config/config.go
 ```
 
+# README.md
+
+### `ENV`
+
+- Specifies the application's environment (DEV, TEST, PROD).
+
+### `WORKING_DIR`
+
+- Defines the working directory for deal CIDs files and aggregated files (e.g., "/tmp/import").
+
+### `FIL_NODE`
+
+- Specifies the address and port of the Filecoin node (e.g., "localhost:1234").
+
+### `PRIV_KEY`
+
+- Stores the private key for on chain transactions
+
+### `BEARER_TOKEN_FILECOIN_NODE`
+
+- Stores the bearer token for authenticating requests to the Filecoin node.
+
+### `DEAL_CLIENT_CONTRACT`
+
+- Specifies the contract address for the deal client.
+
+### `CHAIN_RPC`
+
+- Defines the RPC endpoint for chain interaction (e.g., "http://127.0.0.1:8545").
+
+### `MAX_BATCH_SIZE`
+
+- Specifies the threshold size for a batch in bytes after which an aggreagation is triggered.
+
 ## Installation and Usage
 
 Provide step-by-step instructions on how to install and set up your project. Include any dependencies that need to be installed.
